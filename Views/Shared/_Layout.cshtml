@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gaur Brothers</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Gaur Brothers  helps you buy, sell your dream home easily." />
+    <meta name="keywords" content="Gaur Brothers, homes, buy, property, listings" />
+    <meta name="author" content="Gaur Brothers" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="~/assets/images/logo.png" />
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RealEstate.styles.css" asp-append-version="true" />
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: all 0.3s ease-in-out;
+        }
+
+        :root {
+            --bg: #f8f9fa;
+            --text: #212529;
+            --nav-bg: linear-gradient(90deg, #004e92, #000428);
+            --footer-bg: #111;
+        }
+
+        [data-theme="dark"] {
+            --bg: #121212;
+            --text: #f1f1f1;
+            --nav-bg: linear-gradient(90deg, #1f1f1f, #000000);
+            --footer-bg: #000;
+        }
+
+        .navbar {
+            background: var(--nav-bg);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: white !important;
+            transition: color 0.3s ease;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #f9c74f !important;
+            }
+
+        .navbar-brand img {
+            height: 55px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu {
+            background-color: var(--bg);
+        }
+
+            .dropdown-menu a {
+                color: var(--text);
+            }
+
+        .theme-toggle {
+            border: none;
+            background: transparent;
+            color: #fff;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+            .theme-toggle:hover {
+                transform: scale(1.2);
+            }
+
+        footer {
+            background: var(--footer-bg);
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+            footer h5 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            footer i {
+                margin-right: 8px;
+            }
+
+            footer hr {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+
+        .footer-custom {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #dee2e6;
+            font-size: 0.95rem;
+        }
+
+            .footer-custom h5 {
+                color: #fff;
+                margin-bottom: 1rem;
+            }
+
+            .footer-custom i {
+                color: #ffc107;
+            }
+
+            .footer-custom a:hover {
+                color: #f9c74f;
+            }
+
+        .footer-custom {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #dee2e6;
+            font-size: 0.95rem;
+        }
+
+            .footer-custom h5 {
+                color: #fff;
+                margin-bottom: 1rem;
+            }
+
+            .footer-custom i {
+                color: #ffc107;
+            }
+
+            .footer-custom a:hover {
+                color: #f9c74f;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="@Url.Content("~/assets/images/logo.png")" alt="Gaur Brother's" style="height: 100px;" class="me-2" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/Home/ResidentialSales">Residential Sales</a></li>
+                                <li><a class="dropdown-item" href="/Home/CommercialLeasing">Commercial Leasing</a></li>
+                                <li><a class="dropdown-item" href="/Home/StudioInvestments">Studio Investments</a></li>
+                                <li><a class="dropdown-item" href="/Home/LegalAdvisory">Legal & Advisory</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Price">Price</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="theme-toggle ms-2" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+                                <i class="fas fa-moon" id="themeIcon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        @RenderBody()
+    </main>
+
+    <footer class="footer-custom text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <!-- About -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold">About Us</h5>
+                    <p class="small">
+                        Real Estate Pro is a trusted name in real estate, helping you find the perfect home, office, or investment.
+                        Backed by years of experience and a happy clientele.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="/" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="/Home/About" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="/Home/Projects" class="text-white text-decoration-none">Projects</a></li>
+                        <li><a href="/Home/Price" class="text-white text-decoration-none">Price List</a></li>
+                        <li><a href="/Home/Contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-4 text-md-end">
+                    <h5 class="fw-bold">Contact</h5>
+                    <p class="mb-1"><i class="fas fa-phone-alt me-2"></i>+919220441985</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>gaurbrothersassociate@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Greater Noida (West),Sector 1 ,Behind Ace city India</p>
+                </div>
+            </div>
+
+            <hr class="border-top border-light opacity-25 my-4" />
+
+            <!-- Social & Copyright -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small">
+                <span>&copy; @DateTime.Now.Year Real Estate Pro. All rights reserved.</span>
+                <div class="mt-2 mt-md-0">
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-white text-decoration-none"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            document.getElementById('themeIcon').className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+        }
+
+        // Apply saved theme on page load
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.getElementById('themeIcon').className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        })();
+    </script>
+</body>
+</html>

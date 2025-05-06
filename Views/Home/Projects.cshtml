@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Completed Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+            .transition:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .project-video {
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .card-img-top {            height: 200px;
+            object-fit: cover;
+        }
+
+        .book-now-fixed {
+            position: fixed;
+            top: 560px;
+            right: 20px;
+            z-index: 1055;
+            background-color: #198754;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+            .book-now-fixed:hover {
+                background-color: #157347;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <!-- Book Now Floating Button -->
+    <button class="book-now-fixed btn" data-bs-toggle="modal" data-bs-target="#bookNowModal">
+        <i class="fas fa-calendar-check me-1"></i> Book Now
+    </button>
+    <div class="container py-5">
+        <h1 class="text-center text-success mb-5">
+            <i class="fas fa-check-circle me-2"></i> Projects
+        </h1>
+
+        <div class="row g-4">
+            <!-- Krishna Elite Homes -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-success shadow-sm h-100 transition">
+                    <img src="~/assets/images/KrishnaElitehomes.jpg" class="card-img-top rounded-top" alt="Krishna Elite Homes" />
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Krishna Elite Homes</h5>
+                        <p class="card-text">Luxury apartments with modern design, offering peace and accessibility in the city's prime location. Ideal for families seeking a blend of elegance and convenience.</p>
+                    </div>
+                    <div class="card-footer bg-transparent text-center">
+                        <a href="~/assets/images/slides/kRISHNAHOME.pdf" class="btn btn-danger w-100 mb-2" download>
+                            <i class="fas fa-file-pdf me-1"></i>Download Brochure
+                        </a>
+                        <video src="~/Videos/Krishnaelitehomes.mp4" class="w-100 project-video" autoplay muted loop playsinline controls style="height: 200px; object-fit: cover;"></video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sarswati Galleria -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-success shadow-sm h-100 transition">
+                    <img src="~/assets/images/Saraswatigalleria.jpg" class="card-img-top rounded-top" alt="Sarswati Galleria" />
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Sarswati Galleria</h5>
+                        <p class="card-text">Premium commercial complex featuring modern retail outlets and lifestyle services. Strategically located for maximum footfall and visibility.</p>
+                    </div>
+                    <div class="card-footer bg-transparent text-center">
+                        <a href="~/assets/images/Brochure -Saraswati Galleria .pdf" class="btn btn-danger w-100 mb-2" download>
+                            <i class="fas fa-file-pdf me-1"></i>Download Brochure
+                        </a>
+                        <video src="~/Videos/sarswatigalleriavideo.mp4" class="w-100 project-video" autoplay muted loop playsinline controls style="height: 200px; object-fit: cover;"></video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sarswati Smart Home -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-success shadow-sm h-100 transition">
+                    <img src="~/assets/images/Sarswatismarthome.jpg" class="card-img-top rounded-top" alt="Sarswati Smart Home" />
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Sarswati Smart Home</h5>
+                        <p class="card-text">Smart living solutions with advanced home automation, security systems, and energy efficiency. Ideal for next-gen living.</p>
+                    </div>
+                    <div class="card-footer bg-transparent text-center">
+                        <a href="~/assets/images/Saraswati Samrt Homes.pdf" class="btn btn-danger w-100 mb-2" download>
+                            <i class="fas fa-file-pdf me-1"></i>Download Brochure
+                        </a>
+                        <video src="~/Videos/sarswatismarthome.mp4" class="w-100 project-video" autoplay muted loop playsinline controls style="height: 200px; object-fit: cover;"></video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sarswati Studios -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-success shadow-sm h-100 transition">
+                    <img src="~/assets/images/sarswatismartstudio.jpg" class="card-img-top rounded-top" alt="Sarswati Studios" />
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Sarswati Studios</h5>
+                        <p class="card-text">Compact yet stylish studio apartments designed for solo living or rentals. Fully equipped for modern-day convenience and comfort.</p>
+                    </div>
+                    <div class="card-footer bg-transparent text-center">
+                        <a href="~/assets/pdfs/Studios.pdf" class="btn btn-danger w-100 mb-2" download>
+                            <i class="fas fa-file-pdf me-1"></i>Download Brochure
+                        </a>
+                        <video src="~/Videos/3.mp4" class="w-100 project-video" autoplay muted loop playsinline controls style="height: 200px; object-fit: cover;"></video>
+                    </div>
+                </div>
+            </div>
+            <!-- Orchid State-->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-success shadow-sm h-100 transition">
+                    <img src="~/assets/images/orchidstate.jpg" class="card-img-top rounded-top" alt="Orchid State" />
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Orchid State</h5>
+                        <p class="card-text">Compact yet stylish studio apartments designed for solo living or rentals. Fully equipped for modern-day convenience and comfort.</p>
+                    </div>
+                    <div class="card-footer bg-transparent text-center">
+                        <a href="~/assets/images/Winsten Park Saraswati Group.pdf" class="btn btn-danger w-100 mb-2" download>
+                            <i class="fas fa-file-pdf me-1"></i>Download Brochure
+                        </a>
+                        <video src="~/Videos/Orchid State.mp4" class="w-100 project-video" autoplay muted loop playsinline controls style="height: 200px; object-fit: cover;"></video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wisten Park -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-success shadow-sm h-100 transition">
+                    <img src="~/assets/images/wistenpark.jpg" class="card-img-top rounded-top" alt="Wisten Park" />
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Wisten Park</h5>
+                        <p class="card-text">Green residential township with walkways, parks, and nature-centric homes offering a peaceful environment.</p>
+                    </div>
+                    <div class="card-footer bg-transparent text-center">
+                        <a href="~/assets/pdfs/WistenPark.pdf" class="btn btn-danger w-100 mb-2" download>
+                            <i class="fas fa-file-pdf me-1"></i>Download Brochure
+                        </a>
+                        <video src="~/Videos/wistenpark.mp4" class="w-100 project-video" autoplay muted loop playsinline controls style="height: 200px; object-fit: cover;"></video>
+                    </div>
+                </div>
+            </div>
+            <!-- Book Now Modal -->
+            <div class="modal fade" id="bookNowModal" tabindex="-1" aria-labelledby="bookNowModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="bookNowModalLabel">Book Now</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+91-">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="3" placeholder="Any specific request..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

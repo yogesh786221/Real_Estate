@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Our Real Estate Services";
+    var services = new[]
+    {
+        new {
+            Icon = "fa-house-chimney",
+            Title = "Residential Property Sales",
+            Desc = "We help you find premium 1BHK, 2BHK, and 3BHK homes in projects like Krishna Elite Homes and Sarswati Smart Home, tailored for families and investors alike.",
+            Color = "text-primary",
+            Tag = "Buy / Sell"
+        },
+        new {
+            Icon = "fa-store",
+            Title = "Commercial Property Leasing",
+            Desc = "From high-footfall retail shops to ready-to-move IT suites like Wisten Park, we offer strategic commercial investment opportunities.",
+            Color = "text-warning",
+            Tag = "Shops / Offices"
+        },
+        new {
+            Icon = "fa-bed",
+            Title = "Studio Apartment Solutions",
+            Desc = "Explore affordable studio spaces in Sarswati Studios with strong rental demand and assured leaseback returns.",
+            Color = "text-info",
+            Tag = "Studios"
+        },
+        new {
+            Icon = "fa-chart-line",
+            Title = "Investment Advisory",
+            Desc = "Our experts guide you on high-yield properties like Embassy or Smart Home with real market insights, rent assurance & capital growth strategies.",
+            Color = "text-success",
+            Tag = "ROI"
+        },
+        new {
+            Icon = "fa-tools",
+            Title = "Project Development Support",
+            Desc = "We assist developers from land planning to project marketing, drawing insights from successful projects like Orchid State.",
+            Color = "text-danger",
+            Tag = "Builders"
+        },
+        new {
+            Icon = "fa-scale-balanced",
+            Title = "Legal & Documentation",
+            Desc = "Our legal team handles registry, GST, power of attorney, and all government documentation for hassle-free ownership.",
+            Color = "text-secondary",
+            Tag = "Legal Help"
+        }
+    };
+}
+<div class="container my-5">
+    <h1 class="display-5 fw-bold text-center mb-4">Our Real Estate Services</h1>
+    <p class="text-center text-muted mb-5">
+        Backed by successful projects, our services are crafted to simplify every step of your real estate journey.
+    </p>
+
+    <div class="row g-4">
+        @foreach (var s in services)
+        {
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100 border-0 service-card rounded-4">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle mx-auto mb-3">
+                            <i class="fas @s.Icon fa-2x @s.Color"></i>
+                        </div>
+                        <h5 class="fw-bold">@s.Title</h5>
+                        <span class="badge bg-light text-dark mb-2">@s.Tag</span>
+                        <p class="text-muted">@s.Desc</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        background-color: #eef7fc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .service-card {
+        transition: box-shadow 0.3s ease;
+        border-radius: 1rem;
+    }
+
+        .service-card:hover {
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.07);
+        }
+</style>

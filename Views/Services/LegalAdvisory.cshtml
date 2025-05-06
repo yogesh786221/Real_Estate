@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Legal & Advisory";
+}
+
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Legal & Advisory Services</h2>
+    <p class="text-center mb-5">
+        Navigating legal documentation and regulatory compliance in real estate can be complex. Our experienced legal advisors help with due diligence, title verification, registration, and property law consultations to ensure smooth, risk-free transactions.
+    </p>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/legal-title.jpg" class="card-img-top" alt="Title Verification">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Title Verification</h5>
+                    <p class="card-text">Detailed review and validation of property ownership and legal standing to protect your investment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/legal-registration.jpg" class="card-img-top" alt="Property Registration">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Registration & Documentation</h5>
+                    <p class="card-text">We handle all your paperwork—sale deed, power of attorney, mutation process, and stamp duty guidance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/legal-advice.jpg" class="card-img-top" alt="Legal Advisory">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Real Estate Legal Advice</h5>
+                    <p class="card-text">Consult our experts for property disputes, builder-buyer agreements, and legal compliance checks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="text-center mt-5">
+        <button class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#bookConsultModal">Book a Consultation</button>
+        <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#askLegalModal">Ask a Legal Query</button>
+    </div>
+</section>
+
+<!-- Book a Consultation Modal -->
+<div class="modal fade" id="bookConsultModal" tabindex="-1" aria-labelledby="bookConsultLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookConsultLabel">Book a Legal Consultation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            @using (Html.BeginForm("Legal", "Services", FormMethod.Post, new { id = "Services" }))
+            {
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="FullName" class="form-control" placeholder="Enter your name" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="PhoneNumber" class="form-control" placeholder="Enter your phone number" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Preferred Date</label>
+                        <input type="date" name="PreferredDate" class="form-control" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Ask Legal Query Modal -->
+<div class="modal fade" id="askLegalModal" tabindex="-1" aria-labelledby="askLegalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="askLegalModalLabel">Ask a Legal Query</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Your Question</label>
+                        <textarea class="form-control" rows="3" placeholder="Describe your legal query..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Send Query</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

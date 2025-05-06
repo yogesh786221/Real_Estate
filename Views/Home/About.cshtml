@@ -1,0 +1,170 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+<div class="container my-5">
+    <h1 class="display-5 fw-bold text-center mb-4">About Us</h1>
+    <p class="text-center text-muted mb-5">
+        At RealEstatePro, we are committed to transforming the property experience through innovation, integrity, and insight.
+    </p>
+
+    <!-- Mission Statement -->
+    <section class="mb-5">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <img src="~/assets/images/slides/mission.jpeg" alt="RealEstatePro mission illustration" class="img-fluid rounded shadow-sm">
+            </div>
+            <div class="col-lg-6 text-md-start text-center">
+                <h3 class="fw-bold mb-3">Our Mission</h3>
+                <p>
+                    We aim to simplify property transactions and offer personalized solutions for every client. Our approach combines modern technology with in-depth market knowledge to deliver exceptional results in real estate buying, selling, and investments.
+                </p>
+                <p>
+                    Whether you're a first-time buyer, an experienced investor, or looking to lease commercial space, our team is dedicated to helping you make informed and profitable decisions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="mb-5">
+        <h3 class="fw-bold text-center mb-4">Meet Our Team</h3>
+        <div class="row g-4">
+            @foreach (var member in new[] {
+            new { Name = "Akash Gaur", Role = "Founder & CEO", Image = "AAKASH.jpg" },
+            new { Name = "Vikash Gaur", Role = "Marketing Head", Image = "" },
+            new { Name = "", Role = "Property Consultant", Image = "" }
+            })
+            {
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center h-100">
+                        <img src="~/assets/images/@member.Image" class="card-img-top rounded-top" alt="Portrait of @member.Name">
+                        <div class="card-body">
+                            <h5 class="fw-bold">@member.Name</h5>
+                            <p class="text-muted">@member.Role</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-light rounded p-4 mb-5">
+        <h3 class="fw-bold text-center mb-4">Why Choose RealEstatePro?</h3>
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                <h5 class="fw-bold">Trust & Transparency</h5>
+                <p class="text-muted">We build lasting relationships through honest advice and reliable service.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-lightbulb fa-3x text-warning mb-3"></i>
+                <h5 class="fw-bold">Smart Solutions</h5>
+                <p class="text-muted">Innovative strategies tailored to each client’s unique needs and goals.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-users fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">Client-Centered Approach</h5>
+                <p class="text-muted">We put your satisfaction first—every step of the way.</p>
+            </div>
+        </div>
+
+    </section>
+   @*  Our Impact in Numbers *@
+    <section class="my-5">
+        <h3 class="fw-bold text-center mb-4">Our Impact in Numbers</h3>
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <h2 class="fw-bold text-primary"><span class="counter" data-target="1000">100+</span>+</h2>
+                <p class="text-muted">Happy Clients</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fw-bold text-success"><span class="counter" data-target="300">350+</span>+</h2>
+                <p class="text-muted">Properties Sold</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fw-bold text-warning"><span class="counter" data-target="10">10</span>+</h2>
+                <p class="text-muted">Years of Excellence</p>
+            </div>
+        </div>
+    </section>
+    <!-- Company Timeline -->
+    <section class="mb-5">
+        <h3 class="fw-bold text-center mb-4">Our Journey</h3>
+        <ul class="timeline">
+            <li>
+                <span class="timeline-year">2015</span>
+                <p class="timeline-desc">Founded with a mission to innovate the property market.</p>
+            </li>
+            <li>
+                <span class="timeline-year">2017</span>
+                <p class="timeline-desc">Expanded to 3 major cities, serving over 500+ clients.</p>
+            </li>
+            <li>
+                <span class="timeline-year">2020</span>
+                <p class="timeline-desc">Launched our digital platform for seamless property browsing.</p>
+            </li>
+            <li>
+                <span class="timeline-year">2023</span>
+                <p class="timeline-desc">Celebrated 1,000+ successful transactions and growing!</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-5">
+        <h4 class="fw-bold mb-3">Ready to work with us?</h4>
+        <a asp-controller="Home" asp-action="Contact" class="btn btn-primary px-4 py-2">Get in Touch</a>
+
+    </div>
+</div>
+
+<!-- Timeline Custom Styling -->
+<style>
+    .timeline {
+        list-style: none;
+        padding-left: 0;
+        position: relative;
+    }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #dee2e6;
+        }
+
+        .timeline li {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 50px;
+        }
+
+    .timeline-year {
+        font-weight: 600;
+        color: #0d6efd;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .timeline-desc {
+        color: #6c757d;
+    }
+
+    .timeline li::before {
+        content: '';
+        position: absolute;
+        left: 13px;
+        top: 0;
+        width: 14px;
+        height: 14px;
+        background: #0d6efd;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #0d6efd;
+    }
+</style>

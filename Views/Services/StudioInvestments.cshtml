@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Studio Investments";
+}
+
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Studio Investments</h2>
+    <p class="text-center mb-5">
+        Studio apartments are a smart, low-maintenance real estate investment with high rental yields. We provide curated listings in high-demand urban locations ideal for both living and leasing.
+    </p>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/current/Project/Krishnahomes.jpg" class="card-img-top" alt="Urban Studio Apartment">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Urban Studios</h5>
+                    <p class="card-text">Compact, well-connected apartments in city centers perfect for young professionals and short-term rentals.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/furnished-studio.jpg" class="card-img-top" alt="Furnished Studio">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Furnished Studios</h5>
+                    <p class="card-text">Fully equipped spaces ready to move in or lease out — ideal for investors looking for passive income.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/vacation-studio.jpg" class="card-img-top" alt="Vacation Studio">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Vacation Studios</h5>
+                    <p class="card-text">Invest in leisure—studio units in tourist hotspots offering great returns via short-term rentals and Airbnb.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="text-center mt-5">
+        <button class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#bookVisitModal">Book a Visit</button>
+        <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#enquireModal">Enquire Now</button>
+    </div>
+</section>
+
+<!-- Book a Visit Modal -->
+<div class="modal fade" id="bookVisitModal" tabindex="-1" aria-labelledby="bookVisitLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookVisitLabel">Book a Site Visit</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            @using (Html.BeginForm("Studio", "Services", FormMethod.Post, new { id = "Services" }))
+            {
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="FullName" class="form-control" placeholder="Enter your name" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="PhoneNumber" class="form-control" placeholder="Enter your phone number" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Preferred Date</label>
+                        <input type="date" name="PreferredDate" class="form-control" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Enquire Now Modal -->
+<div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enquireModalLabel">Enquire About Studio Investments</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="3" placeholder="Tell us what you're looking for..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Send Enquiry</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

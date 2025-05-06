@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "Commercial Leasing";
+}
+
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Commercial Leasing</h2>
+    <p class="text-center mb-5">
+        Our commercial leasing services help businesses find the right spaces to grow. From retail shops to office towers,
+        we offer strategic locations, flexible terms, and end-to-end leasing solutions tailored to your business needs.
+    </p>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/office-space.jpg" class="card-img-top" alt="Office Space">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Office Spaces</h5>
+                    <p class="card-text">Modern office setups in business districts ideal for startups, agencies, and corporations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/retail-store.jpg" class="card-img-top" alt="Retail Shops">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Retail Shops</h5>
+                    <p class="card-text">High-footfall retail units in malls, markets, and commercial centers for maximum visibility.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/warehouse.jpg" class="card-img-top" alt="Warehouses">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Warehouses</h5>
+                    <p class="card-text">Spacious and secure warehousing solutions with easy logistics access and compliance support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="text-center mt-5">
+        <button class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#bookVisitModal">Book a Visit</button>
+@*         <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#enquireModal">Enquire Now</button>
+ *@    </div>
+</section>
+
+<!-- Book a Visit Modal -->
+<div class="modal fade" id="bookVisitModal" tabindex="-1" aria-labelledby="bookVisitLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookVisitLabel">Book a Site Visit</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            @using (Html.BeginForm("Commercial", "Services", FormMethod.Post, new { id = "Services" }))
+            {
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="FullName" class="form-control" placeholder="Enter your name" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="PhoneNumber" class="form-control" placeholder="Enter your phone number" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Preferred Date</label>
+                        <input type="date" name="PreferredDate" class="form-control" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Enquire Now Modal -->
+@* <div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enquireModalLabel">Enquire About Leasing</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="3" placeholder="Tell us what you're looking for..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Send Enquiry</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+ *@

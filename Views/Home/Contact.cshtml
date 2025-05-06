@@ -1,0 +1,83 @@
+﻿@model WEBSITE.Models.ContactFormModel
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="container my-5">
+    <h1 class="display-5 fw-bold text-center mb-4">Get in Touch</h1>
+    <p class="text-center text-muted mb-5">
+        We’re here to help you with all your real estate needs. Fill out the form or reach out through the details below.
+    </p>
+
+    <div class="row g-4">
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                   @*  <form id="contactForm"> *@
+                    @using (Html.BeginForm("SendMessage", "Contact", FormMethod.Post, new { id = "contactForm" }))
+                    {
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="Name" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="Email" class="form-control" placeholder="email@example.com" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="Subject" class="form-control" placeholder="Inquiry about property..." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="Message" class="form-control" rows="4" placeholder="Type your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary px-4">Send Message</button>
+                     }
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-3">Our Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt text-danger me-2"></i>
+                            <strong>Address:</strong> 123 Real Estate Blvd, City, Country
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone-alt text-success me-2"></i>
+                            <strong>Phone:</strong> +92 123 456 7890
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope text-primary me-2"></i>
+                            <strong>Email:</strong> contact@realestatepro.com
+                        </li>
+                    </ul>
+
+                    <h6 class="fw-bold mt-4">Follow Us</h6>
+                    <div class="d-flex gap-3 mt-2">
+                        <a href="#" class="text-dark"><i class="fab fa-facebook fa-lg hover-opacity"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-instagram fa-lg hover-opacity"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-linkedin fa-lg hover-opacity"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        </div>
+<style>
+    .hover-opacity:hover {
+        opacity: 0.7;
+        transition: opacity 0.3s;
+    }
+</style>

@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Residential Sales";
+}
+
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Residential Sales</h2>
+    <p class="text-center mb-5">
+        We specialize in helping individuals and families find their dream homes. From budget apartments to luxury villas,
+        our team ensures smooth property transactions with expert market guidance and transparent deals.
+    </p>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/apartment.jpg" class="card-img-top" alt="Apartment">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Apartments</h5>
+                    <p class="card-text">Explore premium and affordable apartments in prime locations with full amenities and smart layouts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/villa.jpg" class="card-img-top" alt="Villa">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Villas</h5>
+                    <p class="card-text">Find spacious villas and independent houses perfect for families, investments, or retirement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/assets/images/plot.jpg" class="card-img-top" alt="Plots">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold">Residential Plots</h5>
+                    <p class="card-text">Choose from a range of residential plots in gated communities and up-and-coming areas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="text-center mt-5">
+        <button class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#bookVisitModal">Book a Visit</button>
+@*         <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#enquireModal">Enquire Now</button>
+ *@    </div>
+</section>
+
+<!-- Book a Visit Modal -->
+<div class="modal fade" id="bookVisitModal" tabindex="-1" aria-labelledby="bookVisitLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookVisitLabel">Book a Site Visit</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+           @*  <form> *@
+            @using (Html.BeginForm("Residential", "Services", FormMethod.Post, new { id = "Services" }))
+            {
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="FullName" class="form-control" placeholder="Enter your name" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="PhoneNumber" class="form-control" placeholder="Enter your phone number" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Preferred Date</label>
+                        <input type="date" name="PreferredDate" class="form-control" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            }
+            @*  </form> *@
+        </div>
+    </div>
+</div>
+
+<!-- Enquire Now Modal -->
+@* <div class="modal fade" id="enquireModal" tabindex="-1" aria-labelledby="enquireModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enquireModalLabel">Enquire About a Property</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+           
+        </div>
+    </div>
+</div>
+ *@
